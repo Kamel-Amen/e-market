@@ -55,7 +55,7 @@ const Products = () => {
       <svg
         xmlns='http://www.w3.org/2000/svg'
         viewBox='0 0 1440 320'
-        className='position-absolute bottom-0'
+        className='position-absolute bottom-0 svg'
       >
         <path
           fill='#0099ff'
