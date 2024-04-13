@@ -24,6 +24,7 @@ const Options = () => {
             src={coverLeft}
             alt='cover'
             className='options-img w-100 h-100'
+            loading='lazy'
           />
         </section>
         <section className='right options-section m-0 p-0 d-inline-flex justify-content-center align-items-center'>
@@ -38,6 +39,7 @@ const Options = () => {
             src={coverRight}
             alt='cover'
             className='options-img w-100 h-100'
+            loading='lazy'
           />
         </section>
       </div>

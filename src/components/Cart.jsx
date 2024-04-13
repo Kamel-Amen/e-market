@@ -1,9 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Header from './Header';
 import { useDispatch, useSelector } from 'react-redux';
 import { faCartArrowDown } from '@fortawesome/free-solid-svg-icons';
-import CartItem from './CartItem';
 import { clearCart } from '../features/cart/CartSlice';
+import { NavLink } from 'react-router-dom';
+import Header from './Header';
+import CartItem from './CartItem';
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -57,6 +58,9 @@ const Cart = () => {
           >
             clear cart
           </button>
+          <NavLink to='/checkout' className='btn clear-btn text-uppercase ms-3'>
+            checkout
+          </NavLink>
         </footer>
       </section>
     </>

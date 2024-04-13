@@ -5,7 +5,12 @@ import { faHandPeace } from '@fortawesome/free-solid-svg-icons';
 const Welcome = () => {
   return (
     <section className='welcome position-relative w-100' id='welcome'>
-      <img src={homeCover} alt='cover' className='w-100 h-100 welcome-cover' />
+      <img
+        loading='lazy'
+        src={homeCover}
+        alt='cover'
+        className='w-100 h-100 welcome-cover'
+      />
       <div className='welcome-content position-absolute top-50 start-50 text-center'>
         <h1>
           WELCOME TO E-MARKET <FontAwesomeIcon icon={faHandPeace} />

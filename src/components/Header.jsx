@@ -1,7 +1,7 @@
 //import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import logo from '/public/logo.gif';
-import { faProductHunt } from '@fortawesome/free-brands-svg-icons';
+import { faProductHunt, faGgCircle } from '@fortawesome/free-brands-svg-icons';
 import { faCartShopping, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -12,21 +12,7 @@ const Header = () => {
   return (
     <nav className='navbar navbar-expand-lg bg-body-tertiary shadow fixed-top'>
       <div className='container-fluid'>
-        <button
-          className='navbar-toggler'
-          type='button'
-          data-bs-toggle='collapse'
-          data-bs-target='#navbarSupportedContent'
-          aria-controls='navbarSupportedContent'
-          aria-expanded='false'
-          aria-label='Toggle navigation'
-        >
-          <span className='navbar-toggler-icon'></span>
-        </button>
-        <div
-          className='collapse navbar-collapse flex-grow-0'
-          id='navbarSupportedContent'
-        >
+        <div className='flex-grow-0'>
           <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
             <li className='nav-item'>
               <NavLink
@@ -38,6 +24,12 @@ const Header = () => {
                 PRODUCTS
               </NavLink>
             </li>
+            <li className='nav-item'>
+              <NavLink className='nav-link active' aria-current='page' to='/'>
+                <FontAwesomeIcon icon={faGgCircle} className='me-1' />
+                OPTIONS
+              </NavLink>
+            </li>
           </ul>
         </div>
         <NavLink className='navbar-brand' to='/home'>
@@ -47,6 +39,7 @@ const Header = () => {
             width='40'
             height='40'
             className='rounded'
+            loading='lazy'
           />{' '}
           E-MARKET
         </NavLink>

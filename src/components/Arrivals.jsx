@@ -27,9 +27,9 @@ const Arrivals = () => {
           <hr className='w-75 mx-auto' />
         </h1>
         <div className='arrivals-images row m-0 pt-5'>
-          <img src={cover2} className='col-4 p-0' alt='cover' />
-          <img src={cover1} className='col-4 p-0' alt='cover' />
-          <img src={cover3} className='col-4 p-0' alt='cover' />
+          <img loading='lazy' src={cover2} className='col-4 p-0' alt='cover' />
+          <img loading='lazy' src={cover1} className='col-4 p-0' alt='cover' />
+          <img loading='lazy' src={cover3} className='col-4 p-0' alt='cover' />
         </div>
         <div className='arrivals-news row position-relative m-0'>
           <section className='col-6 position-relative p-0'>
@@ -43,7 +43,12 @@ const Arrivals = () => {
               <button className='btn btn-outline-dark'>SHOP NOW !</button>
             </aside>
           </section>
-          <img src={cover4} alt='cover' className='news-img col-6 p-0' />
+          <img
+            loading='lazy'
+            src={cover4}
+            alt='cover'
+            className='news-img col-6 p-0'
+          />
         </div>
       </div>
       <svg

@@ -21,11 +21,13 @@ const Footer = () => {
         ></path>
       </svg>
       <img
+        loading='lazy'
         src={shape1}
         alt='shape'
         className='position-absolute bottom-0 start-0'
       />
       <img
+        loading='lazy'
         src={shape3}
         alt='shape'
         className='position-absolute top-50 end-0'
@@ -69,7 +71,12 @@ const Footer = () => {
             </form>
           </aside>
           <aside className='footer-cover col-6'>
-            <img src={contact} alt='contact' className='w-100 h-100' />
+            <img
+              loading='lazy'
+              src={contact}
+              alt='contact'
+              className='w-100 h-100'
+            />
           </aside>
         </div>
         <div className='copyrights mt-3 py-4'>

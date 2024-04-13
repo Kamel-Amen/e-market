@@ -1,6 +1,7 @@
 /* Imports */
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 /* Imports */
 
 * {
@@ -107,8 +108,34 @@ body::-webkit-scrollbar-thumb {
       .card {
         width: 18rem;
         height: 30rem;
+        transition: all 0.2s ease-in-out;
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        cursor: pointer;
+        &:hover {
+          transform: scale(1.1);
+          -webkit-transform: scale(1.1);
+          -moz-transform: scale(1.1);
+          box-shadow: 0 0 10px #6e687e;
+          .card-img-top {
+            transform: scale(0.85) rotate(25deg);
+            -webkit-transform: scale(0.85) rotate(25deg);
+            -moz-transform: scale(0.85) rotate(25deg);
+          }
+        }
         .card-img-top {
-          height: 70%;
+          height: 60%;
+          width: 90%;
+          transition: all 0.3s ease-in-out;
+          -webkit-transition: all 0.3s ease-in-out;
+          -moz-transition: all 0.3s ease-in-out;
+        }
+        .card-body {
+          height: 40%;
+          padding-top: 1.5rem;
+          .card-title {
+            font-size: 1.4rem;
+          }
         }
       }
     }
@@ -313,6 +340,19 @@ body::-webkit-scrollbar-thumb {
     }
   }
   /* CART */
+  //////////////////////////////////////////
+  //////////////////////////////////////////
+  /* Checkout */
+  .checkout {
+    margin-top: 4rem;
+    padding-bottom: 5rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    .checkout-header {
+      font-size: 2.5rem;
+    }
+  }
   //////////////////////////////////////////
 }
 //////////////////////////////////////////
@@ -564,11 +604,61 @@ body::-webkit-scrollbar-thumb {
   //////////////////////////////////////////
   /* CART */
   .cart {
-    padding: 8rem 0;
+    padding: 10rem 0;
     h2 {
       margin-bottom: 1rem;
     }
   }
   /* CART */
-  //////////////////////////////////////////
+}
+
+/* Loader */
+.loader-holder {
+  width: 100vw;
+  height: 100vh;
+  .loader {
+    width: 60px;
+    height: 22px;
+    border: 2px solid;
+    border-radius: 3px;
+    margin-left: -3px;
+  }
+}
+
+.loader::after,
+.loader::before {
+  content: '';
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  height: 12px;
+  background: currentColor;
+  top: 3px;
+}
+
+.loader::before {
+  right: -4px;
+  border-radius: 3px;
+  width: 4px;
+}
+
+.loader::after {
+  width: 1px;
+  left: 3px;
+  animation: full 2s ease-in-out infinite;
+}
+
+@keyframes full {
+  20% {
+    background-color: red;
+  }
+
+  45% {
+    background-color: yellow;
+  }
+
+  to {
+    width: 50px;
+    background-color: greenyellow;
+  }
 }
