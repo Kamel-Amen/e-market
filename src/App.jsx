@@ -8,12 +8,16 @@ import { Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { calculateTotal, getProducts } from './features/cart/CartSlice';
+import Login from './components/Login';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function App() {
   const { cartItems, isLoading } = useSelector((store) => store.cart);
   const dispatch = useDispatch();
 
   useEffect(() => {
+    AOS.init();
     dispatch(calculateTotal());
   }, [cartItems]);
 
@@ -31,8 +35,9 @@ function App() {
 
   return (
     <Routes>
-      <Route path='/' element={<Options />} />
-      <Route path='/e-market' element={<Options />} />
+      <Route path='/' element={<Login />} />
+      <Route path='/login' element={<Login />} />
+      <Route path='/options' element={<Options />} />
       <Route path='/home' element={<Home />} />
       <Route path='/cart' element={<Cart />} />
       <Route path='/checkout' element={<Checkout />} />

@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Imports */
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
@@ -28,6 +32,31 @@ body::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid slategrey;
 }
+
+/* Login */
+.login {
+  background-color: #f5f7f9;
+  width: 100vw;
+  height: 100vh;
+  nav {
+    background-color: #000;
+    height: 8%;
+    header {
+      img {
+        width: 50px;
+        height: 50px;
+        transform: scale(2);
+        -webkit-transform: scale(2);
+        -moz-transform: scale(2);
+      }
+    }
+  }
+
+  .login-form {
+    height: 92%;
+  }
+}
+/* Login */
 
 /* Options */
 .options {

@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 
 const Options = () => {
   return (
-    <div className='options overflow-hidden text-center w-100' id='options'>
+    <div className='options overflow-hidden text-center w-100 ' id='options'>
       <header className='options-header text-white fs-1 mt-2 position-absolute w-100'>
         E-MA <span className='text-dark'>RKET</span>
       </header>
