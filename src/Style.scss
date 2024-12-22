@@ -54,6 +54,24 @@ body::-webkit-scrollbar-thumb {
 
   .login-form {
     height: 92%;
+    form {
+      width: 40%;
+      height: 50%;
+      -webkit-box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.75);
+      box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.75);
+
+      .login-btn {
+        transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        &:hover {
+          transform: scale(1.1);
+          -webkit-transform: scale(1.1);
+          -moz-transform: scale(1.1);
+        }
+      }
+    }
   }
 }
 /* Login */
@@ -387,6 +405,19 @@ body::-webkit-scrollbar-thumb {
 //////////////////////////////////////////
 /* Media Query 1023px to 768px || Large Size Devices */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+  /* Login */
+  .login {
+    .login-form {
+      form {
+        height: auto;
+        .login-btn {
+          width: auto !important;
+        }
+      }
+    }
+  }
+  /* Login */
+
   /* Options */
   .options {
     .content {
@@ -567,6 +598,20 @@ body::-webkit-scrollbar-thumb {
 //////////////////////////////////////////
 /* Media Query 425px || Small Devices */
 @media screen and (max-width: 425px) {
+  /* Login */
+  .login {
+    .login-form {
+      form {
+        width: auto;
+        height: auto;
+        .login-btn {
+          width: auto !important;
+        }
+      }
+    }
+  }
+  /* Login */
+
   /* Options */
   .options {
     .content {
