@@ -54,6 +54,9 @@ body::-webkit-scrollbar-thumb {
 
   .login-form {
     height: 92%;
+    background: url('../../public/assets/images/backgrounds/dark-wavy-cover.jpg')
+      no-repeat;
+    background-size: cover;
     form {
       width: 40%;
       height: 50%;
@@ -322,6 +325,18 @@ body::-webkit-scrollbar-thumb {
 
 /* Media Query 1024px || Extra-Large Size Devices */
 @media screen and (min-width: 1024px) {
+  /* Login */
+  .login {
+    .login-form {
+      form {
+        height: auto;
+        .login-btn {
+          width: auto !important;
+        }
+      }
+    }
+  }
+  /* Login */
   //////////////////////////////////////////
   /* welcome */
   .welcome {
@@ -690,6 +705,7 @@ body::-webkit-scrollbar-thumb {
 .loader-holder {
   width: 100vw;
   height: 100vh;
+  background-color: #000;
   .loader {
     width: 60px;
     height: 22px;
