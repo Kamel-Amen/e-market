@@ -20,7 +20,7 @@ const Login = () => {
     e.preventDefault();
     if (email && password) {
       toast.success('You are logged in successfully !');
-      navigate('/options');
+      navigate('/home', { state: { email: email, password: password } });
     } else if (!email) {
       toast.error('Please fill your email !');
       setEmailError(true);
