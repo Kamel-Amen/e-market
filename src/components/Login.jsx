@@ -8,11 +8,12 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import ErrorIcon from '../../public/assets/images/gifs/error.gif';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [emailError, setEmailError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
   const navigate = useNavigate();
 
   const handleFormSubmit = (e) => {
@@ -22,9 +23,13 @@ const Login = () => {
       navigate('/options');
     } else if (!email) {
       toast.error('Please fill your email !');
+      setEmailError(true);
+      setPasswordError(false);
       return;
     } else if (!password) {
       toast.error('Please enter your password !');
+      setPasswordError(true);
+      setEmailError(false);
       return;
     } else {
       toast.error('There is an error, please try again later !');
@@ -70,30 +75,40 @@ const Login = () => {
               Email <span className='text-danger'>*</span>
             </label>
             <input
-              type='email'
               name='email'
+              type='email'
               id='email'
-              className='mb-4 border border-secondary rounded-3 py-1 px-3'
+              className={
+                'mb-4 rounded-3 py-1 px-3' +
+                (emailError
+                  ? ' border border-danger shake-input'
+                  : ' border border-secondary')
+              }
               onChange={(e) => setEmail(e.target.value)}
+              placeholder='example@email.com'
               required
-              data-aos='fade-right'
-              data-aos-duration='1500'
             />
           </div>
 
-          <label htmlFor='password' className='mb-1'>
-            Password <span className='text-danger'>*</span>
-          </label>
-          <input
-            type='password'
-            name='password'
-            id='password'
-            className='mb-5 border border-secondary rounded-3 py-1 px-3'
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            data-aos='fade-right'
-            data-aos-duration='1500'
-          />
+          <div className='input-group d-flex flex-column'>
+            <label htmlFor='password' className='mb-1'>
+              Password <span className='text-danger'>*</span>
+            </label>
+            <input
+              type='password'
+              name='password'
+              id='password'
+              className={
+                'mb-5 rounded-3 py-1 px-3' +
+                (passwordError
+                  ? ' border border-danger shake-input'
+                  : ' border border-secondary')
+              }
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder='******'
+              required
+            />
+          </div>
 
           <button
             type='submit'

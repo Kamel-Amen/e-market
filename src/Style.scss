@@ -752,3 +752,38 @@ body::-webkit-scrollbar-thumb {
     background-color: greenyellow;
   }
 }
+
+.shake-input {
+  animation: input-shaking 1s ease-in-out;
+  -webkit-animation: input-shaking 1s ease-in-out;
+  animation-iteration-count: 2;
+  -webkit-animation-iteration-count: 2;
+}
+@keyframes input-shaking {
+  0%,
+  100% {
+    transform: translate(0);
+    -webkit-transform: translate(0);
+    -moz-transform: translate(0);
+  }
+  20% {
+    transform: translateX(7px);
+    -webkit-transform: translateX(7px);
+    -moz-transform: translateX(7px);
+  }
+  40% {
+    transform: translateX(-7px);
+    -webkit-transform: translateX(-7px);
+    -moz-transform: translateX(-7px);
+  }
+  60% {
+    transform: translateX(13px);
+    -webkit-transform: translateX(13px);
+    -moz-transform: translateX(13px);
+  }
+  80% {
+    transform: translateX(-13px);
+    -webkit-transform: translateX(-13px);
+    -moz-transform: translateX(-13px);
+  }
+}
