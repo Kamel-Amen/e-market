@@ -1,16 +1,16 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import './Style.css';
-import Options from './components/Options';
-import Home from './components/Home';
-import Cart from './components/Cart';
-import Checkout from './components/Checkout';
 import { Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { calculateTotal, getProducts } from './features/cart/CartSlice';
-import Login from './components/Login';
-import AOS from 'aos';
 import 'aos/dist/aos.css';
+import './Style.css';
+import AOS from 'aos';
+import Options from './components/Options';
+import Home from './components/Home';
+import Cart from './components/Cart';
+import Checkout from './components/Checkout';
+import Login from './components/Login';
 
 function App() {
   const { cartItems, isLoading } = useSelector((store) => store.cart);

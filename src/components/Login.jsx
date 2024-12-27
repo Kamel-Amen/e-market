@@ -1,3 +1,4 @@
+// * Imports
 /* eslint-disable no-unused-vars */
 import { useState } from 'react';
 import Logo from '../../public/logo.gif';
@@ -8,8 +9,11 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { useUserContext } from '../contexts/UserContext';
 
+// * Login Function
 const Login = () => {
+  const { login } = useUserContext();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState(false);
@@ -20,7 +24,8 @@ const Login = () => {
     e.preventDefault();
     if (email && password) {
       toast.success('You are logged in successfully !');
-      navigate('/home', { state: { email: email, password: password } });
+      login(email, password);
+      navigate('/home');
     } else if (!email) {
       toast.error('Please fill your email !');
       setEmailError(true);
@@ -54,6 +59,7 @@ const Login = () => {
           className='bg-white rounded-3 p-4 d-flex justify-content-center flex-column'
           data-aos='zoom-in'
           data-aos-duration='750'
+          onSubmit={handleFormSubmit}
         >
           <h5
             className='text-secondary'
@@ -75,15 +81,14 @@ const Login = () => {
               Email <span className='text-danger'>*</span>
             </label>
             <input
-              name='email'
               type='email'
-              id='email'
               className={
                 'mb-4 rounded-3 py-1 px-3' +
                 (emailError
                   ? ' border border-danger shake-input'
                   : ' border border-secondary')
               }
+              value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder='example@email.com'
               required
@@ -96,16 +101,15 @@ const Login = () => {
             </label>
             <input
               type='password'
-              name='password'
-              id='password'
               className={
                 'mb-5 rounded-3 py-1 px-3' +
                 (passwordError
                   ? ' border border-danger shake-input'
                   : ' border border-secondary')
               }
+              value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder='******'
+              placeholder='*******'
               required
             />
           </div>
@@ -113,7 +117,6 @@ const Login = () => {
           <button
             type='submit'
             className='btn btn-primary w-25 mx-auto login-btn'
-            onClick={handleFormSubmit}
           >
             Login <FontAwesomeIcon icon={faRightToBracket} className='ms-1' />
           </button>
