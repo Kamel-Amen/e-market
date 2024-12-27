@@ -5,11 +5,9 @@ import logo from '/public/logo.gif';
 import { faCartShopping, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { useUserContext } from '../contexts/UserContext';
 
 const Header = () => {
   const state = useSelector((store) => store.cart);
-  const { logout } = useUserContext();
 
   return (
     // <nav className='navbar navbar-expand-lg bg-body-tertiary shadow fixed-top'>
@@ -66,11 +64,7 @@ const Header = () => {
               <a href='#' className='btn'>
                 <FontAwesomeIcon className='icon' icon={faSearch} />
               </a>
-              <NavLink
-                to='/'
-                onClick={logout}
-                className='btn btn-sm btn-danger'
-              >
+              <NavLink to='/' className='btn btn-sm btn-danger'>
                 Logout
               </NavLink>
             </div>

@@ -9,11 +9,9 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { useUserContext } from '../contexts/UserContext';
 
 // * Login Function
 const Login = () => {
-  const { login } = useUserContext();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState(false);
@@ -24,7 +22,6 @@ const Login = () => {
     e.preventDefault();
     if (email && password) {
       toast.success('You are logged in successfully !');
-      login(email, password);
       navigate('/home');
     } else if (!email) {
       toast.error('Please fill your email !');
@@ -59,7 +56,6 @@ const Login = () => {
           className='bg-white rounded-3 p-4 d-flex justify-content-center flex-column'
           data-aos='zoom-in'
           data-aos-duration='750'
-          onSubmit={handleFormSubmit}
         >
           <h5
             className='text-secondary'
@@ -117,6 +113,7 @@ const Login = () => {
           <button
             type='submit'
             className='btn btn-primary w-25 mx-auto login-btn'
+            onClick={handleFormSubmit}
           >
             Login <FontAwesomeIcon icon={faRightToBracket} className='ms-1' />
           </button>
