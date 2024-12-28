@@ -331,7 +331,7 @@ const Checkout = () => {
                 <hr className='my-4' />
 
                 <NavLink
-                  to='/home'
+                  to='/options'
                   className='w-100 btn btn-primary btn-lg'
                   type='submit'
                 >
