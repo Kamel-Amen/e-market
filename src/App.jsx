@@ -37,6 +37,7 @@ function App() {
     <Routes>
       <Route path='/' element={<Login />} />
       <Route path='/login' element={<Login />} />
+      <Route path='/e-market' element={<Login />} />
       <Route path='/options' element={<Options />} />
       <Route path='/home' element={<Home />} />
       <Route path='/cart' element={<Cart />} />
