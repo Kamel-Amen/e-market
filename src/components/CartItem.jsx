@@ -3,6 +3,7 @@
 
 import { useDispatch } from 'react-redux';
 import { removeFormCart } from '../features/cart/CartSlice';
+import { toast } from 'react-toastify';
 
 const CartItem = ({ title, price, image, cartId }) => {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ const CartItem = ({ title, price, image, cartId }) => {
         <button
           className='remove-btn'
           onClick={() => {
+            toast.error('Item removed from cart !');
             dispatch(removeFormCart(cartId));
           }}
         >
