@@ -5,6 +5,9 @@ import shape3 from '/public/assets/images/shapes/shape11.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../features/cart/CartSlice';
 import { v4 as uuidV4 } from 'uuid';
+import { toast } from 'react-toastify';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBoxesStacked } from '@fortawesome/free-solid-svg-icons';
 
 const Products = () => {
   const dispatch = useDispatch();
@@ -12,7 +15,12 @@ const Products = () => {
 
   const product = (item) => {
     return (
-      <div className='card mb-5 py-4' key={item.id}>
+      <div
+        className='card mb-5 py-4'
+        key={item.id}
+        data-aos='fade-down'
+        data-aos-duration='1250'
+      >
         <img
           loading='lazy'
           src={item.image}
@@ -20,12 +28,12 @@ const Products = () => {
           alt={item.title}
         />
         <div className='card-body text-center'>
-          <h5 className='card-title'>{item.title.slice(0, 18) + '...'}</h5>
-          <p className='lead'>$ {item.price}</p>
+          <h6 className='card-title'>{item.title.slice(0, 18) + '...'}</h6>
+          <p className='lead text-secondary'>$ {item.price}</p>
           <button
             className='btn btn-outline-primary buy-now-btn'
             onClick={() => {
-              alert('Added Successfully !!');
+              toast.success('Item added to cart successfully !');
               dispatch(addToCart({ ...item, cartId: uuidV4() }));
             }}
           >
@@ -70,8 +78,10 @@ const Products = () => {
       <div className='container py-5'>
         <div className='row'>
           <div className='col-12 text-center'>
-            <h1>Products</h1>
-            <hr />
+            <h1 data-aos='flip-down'>
+              Products <FontAwesomeIcon icon={faBoxesStacked} />
+            </h1>
+            <hr className='w-50 mx-auto' />
           </div>
         </div>
       </div>
