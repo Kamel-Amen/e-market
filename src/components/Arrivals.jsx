@@ -21,17 +21,25 @@ const Arrivals = () => {
         ></path>
       </svg>
       <div className='arrivals-content'>
-        <h1 className='text-uppercase'>
+        <h1
+          className='text-uppercase'
+          data-aos='zoom-in'
+          data-aos-duration='1250'
+        >
           New Arrivals
           <FontAwesomeIcon icon={faTruckFast} className='ms-2' />
-          <hr className='w-75 mx-auto' />
+          <hr className='w-50 mx-auto' />
         </h1>
         <div className='arrivals-images row m-0 pt-5'>
           <img loading='lazy' src={cover2} className='col-4 p-0' alt='cover' />
           <img loading='lazy' src={cover1} className='col-4 p-0' alt='cover' />
           <img loading='lazy' src={cover3} className='col-4 p-0' alt='cover' />
         </div>
-        <div className='arrivals-news row position-relative m-0'>
+        <div
+          className='arrivals-news row position-relative m-0'
+          data-aos='fade-right'
+          data-aos-duration='1500'
+        >
           <section className='col-6 position-relative p-0'>
             <aside className='position-absolute w-100 h-75 d-flex flex-column justify-content-center align-items-center shadow-lg'>
               <h1>NEW ARRIVALS !!</h1>

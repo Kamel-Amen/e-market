@@ -8,7 +8,7 @@ import shape3 from '/public/assets/images/shapes/shape11.svg';
 
 const Footer = () => {
   return (
-    <section className='footer position-relative' id='footer'>
+    <section className='footer position-relative overflow-hidden' id='footer'>
       <svg
         xmlns='http://www.w3.org/2000/svg'
         viewBox='0 0 1440 320'
@@ -33,7 +33,7 @@ const Footer = () => {
         className='position-absolute top-50 end-0'
       />
       <div className='footer-content text-white text-center'>
-        <h1>
+        <h1 data-aos='fade-up' data-aos-duration='1250'>
           CONTACT US
           <FontAwesomeIcon icon={faPhoneFlip} className='ms-3' />
           <hr className='w-75 mx-auto' />
@@ -41,7 +41,11 @@ const Footer = () => {
         <div className='row m-0'>
           <aside className='footer-messages col-6 d-flex justify-content-center align-items-center'>
             <form className='w-75 text-start' style={{ zIndex: 10 }}>
-              <div className='mb-3'>
+              <div
+                className='mb-3'
+                data-aos='fade-right'
+                data-aos-duration='1000'
+              >
                 <label htmlFor='exampleInputEmail1' className='form-label'>
                   Email address
                 </label>
@@ -55,7 +59,11 @@ const Footer = () => {
                   We'll never share your email with anyone else.
                 </div>
               </div>
-              <div className='mb-3'>
+              <div
+                className='mb-3'
+                data-aos='fade-right'
+                data-aos-duration='1250'
+              >
                 <label htmlFor='exampleInputPassword1' className='form-label'>
                   Password
                 </label>
@@ -65,7 +73,12 @@ const Footer = () => {
                   id='exampleInputPassword1'
                 />
               </div>
-              <button type='submit' className='btn btn-outline-primary'>
+              <button
+                type='submit'
+                className='btn btn-outline-primary w-auto'
+                data-aos='fade-down'
+                data-aos-duration='1500'
+              >
                 Send
               </button>
             </form>
@@ -76,6 +89,8 @@ const Footer = () => {
               src={contact}
               alt='contact'
               className='w-100 h-100'
+              data-aos='fade-left'
+              data-aos-duration='1500'
             />
           </aside>
         </div>
